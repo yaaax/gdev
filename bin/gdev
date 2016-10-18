@@ -256,6 +256,11 @@ HEREDOC
 
   def sync(args)
 
+    unless File.exist?('docker-compose.yml')
+        puts "ERROR: docker-compose.yml doesn't exist. You need to run this command in the project root."
+        exit
+    end
+
     options = ['-auto', '-batch', '-prefer newer']
     ignore = ['.git', '.docker','*.unison.tmp']
     container_name = 'data'
