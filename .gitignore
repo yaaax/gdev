@@ -1,2 +1,8 @@
-# Ignore ansible retry files
-ansible/*.retry
+# Github won't need compiled site here
+_site/
+
+# Ignore cache
+.sass-cache/
+.jekyll-metadata
+
+.DS_Store

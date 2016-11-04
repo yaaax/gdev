@@ -1,0 +1,77 @@
+# Site title and subtitle. This is used in _includes/header.html
+title: 'gdev Docs'
+subtitle: 'Helper script for developing web applications with docker'
+
+# Titile to show in footer
+name: gdev
+sponsored_by: Geniem Oy
+
+# Link to Github repo
+# This is used in editing links
+github:
+  repo: devgeniem/gdev
+
+# if you wish to integrate disqus on pages set your shortname here
+disqus_shortname: ''
+
+# if you use google analytics, add your tracking id here
+google_analytics_id: ''
+
+# Site verification for webmasters
+google_site_verification: ''
+
+# Enable/show navigation. There are there options:
+#   0 - always hide
+#   1 - always show
+#   2 - show only if posts are present
+navigation: 1
+
+# URL to source code, used in _includes/footer.html
+codeurl: ''
+
+# Default categories (in order) to appear in the navigation
+sections: [
+  ['get-started', 'Get Started']
+]
+
+# Keep as an empty string if served up at the root. If served up at a specific
+# path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
+baseurl: ''
+
+# This is used in <meta> og fields
+siteurl: localhost:4000
+
+# Use sass from assets folder
+sass:
+  sass_dir: /assets/_sass
+  style: :compressed
+
+# Additional gems to use
+gems:
+  - jekyll-sitemap # Generates sitemaps for Google
+
+# Dates are not included in permalinks
+permalink: /:categories/:title/
+
+# Syntax highlighting
+highlighter: pygments
+
+# Since these are pages, it doesn't really matter
+future: true
+
+# Exclude non-site files
+exclude: ['bin','CNAME', 'README.md']
+
+# Use the redcarpet Markdown renderer
+markdown: redcarpet
+redcarpet:
+    extensions: [
+        'no_intra_emphasis',
+        'fenced_code_blocks',
+        'autolink',
+        'strikethrough',
+        'superscript',
+        'with_toc_data',
+        'tables',
+        'hardwrap'
+    ]
