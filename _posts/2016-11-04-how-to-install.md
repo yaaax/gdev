@@ -21,4 +21,4 @@ Gdev installer installs following software for your computer
 
 * Ansible
 * Docker for Mac
-* Xcode comamnd line tools
+* Xcode command line tools
