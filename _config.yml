@@ -35,7 +35,8 @@ codeurl: ''
 
 # Default categories (in order) to appear in the navigation
 sections: [
-  ['get-started', 'Get Started']
+  ['get-started', 'Get Started'],
+  ['examples', 'Examples']
 ]
 
 # Keep as an empty string if served up at the root. If served up at a specific
