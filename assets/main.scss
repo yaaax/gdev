@@ -100,16 +100,23 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 #search-results-box {
 
+    .search-header {
+        padding-bottom: 9px;
+        border-bottom: 1px solid #eee;
+    }
     animation-name: slideInUp;
     transition: 1s;
     h1 {
         padding-bottom: 5px;
-        color: $highlight;
-        border-bottom: 1px solid #eee
     }
     display: inline-block;
-    padding: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin-bottom: 20px;
+
+    #results-container {
+        padding: 20px;
+    }
 }
 
 #footer {

@@ -3,12 +3,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="icon" href="/images/wp-logo.png">
+    <link rel="icon" href="{{ site.baseurl }}/favicon.svg">
 
-    <meta property='og:image' content="{{ site.siteurl }}/images/gdev-logo.png"/>
-    <meta property='og:url' content="{{site.siteurl}}{% if page.url %}{{page.url}}{% endif%}">
-    <link rel="image_src" href="{{ site.siteurl }}/images/gdev-logo.png" / >
-    <link rel="shortcut icon" href="{{ site.siteurl }}/favicon.svg">
+    <meta property='og:image' content="{{ site.siteurl }}{{ site.baseurl }}/images/gdev-logo.png"/>
+    <meta property='og:url' content="{{ site.siteurl }}{% if page.url %}{{page.url}}{% endif%}">
+    <link rel="image_src" href="{{ site.siteurl }}{{ site.baseurl }}/images/gdev-logo.png" / >
+    <link rel="shortcut icon" href="{{ site.siteurl }}{{ site.baseurl }}/favicon.svg">
 
     <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
     <meta property='og:title' content="{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}"/>
@@ -29,7 +29,7 @@
     <meta name="twitter:site" content="@Geniemfi">
     <meta name="summary" content="twitter:card">
     <meta name='twitter:title' content="{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}"/>
-    <meta name="twitter:image:src" content="{{ site.siteurl }}/images/gdev-logo.png">
+    <meta name="twitter:image:src" content="{{ site.siteurl }}{{ site.baseurl }}/images/gdev-logo.png">
 
 
     <meta name="description" content="{{ site.subtitle }}">

@@ -1,6 +1,10 @@
 # Site title and subtitle. This is used in _includes/header.html
 title: 'gdev Docs'
-subtitle: 'Helper script for developing web applications with docker'
+subtitle: 'Documentation for gdev command line tool'
+
+# Frontpage data
+frontpage:
+  title: Introduction
 
 # Titile to show in footer
 name: gdev
@@ -36,10 +40,10 @@ sections: [
 
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
-baseurl: ''
+baseurl: '/gdev'
 
 # This is used in <meta> og fields
-siteurl: localhost:4000
+siteurl: 'https://devgeniem.github.io'
 
 # Use sass from assets folder
 sass:
@@ -54,7 +58,7 @@ gems:
 permalink: /:categories/:title/
 
 # Syntax highlighting
-highlighter: pygments
+highlighter: rouge
 
 # Since these are pages, it doesn't really matter
 future: true
@@ -62,16 +66,16 @@ future: true
 # Exclude non-site files
 exclude: ['bin','CNAME', 'README.md']
 
-# Use the redcarpet Markdown renderer
-markdown: redcarpet
+# Github prefers kramdown as markdown parser
+markdown: kramdown
 redcarpet:
-    extensions: [
-        'no_intra_emphasis',
-        'fenced_code_blocks',
-        'autolink',
-        'strikethrough',
-        'superscript',
-        'with_toc_data',
-        'tables',
-        'hardwrap'
-    ]
+  extensions: [
+      'no_intra_emphasis',
+      'fenced_code_blocks',
+      'autolink',
+      'strikethrough',
+      'superscript',
+      'with_toc_data',
+      'tables',
+      'hardwrap'
+  ]
