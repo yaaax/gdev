@@ -1,5 +1,6 @@
 {% include search.html %}
 <ul class="nav nav-list">
+    <li class="nav-header">{{ site.name}}</li>
     <li class=>{{ label }}<a href="{{ site.baseurl }}">{{ site.frontpage.title }}</a></li>
     {% for section in site.sections %}
         {% assign attr = section[0] %}
