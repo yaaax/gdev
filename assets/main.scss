@@ -74,6 +74,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 #search-container {
     margin: 15px 0;
     input {
+        width: 100%;
         -webkit-user-select: text;
         -khtml-user-select: text;
         -moz-user-select: text;
