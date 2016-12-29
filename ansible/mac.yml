@@ -26,17 +26,6 @@
       easy_install: name=pip state=latest
       become: yes
 
-    - name: Install unison-fsmonitor dependencies
-      pip: name=MacFSEvents state=present
-      become: yes
-
-    - name: Install unison-fsmonitor for mac (unox)
-      get_url:
-        url: https://raw.githubusercontent.com/hnsl/unox/4cf16fa20ec1f5b2fcafd7b78cac6dfedca18a86/unox.py
-        dest: /usr/local/bin/unison-fsmonitor
-        mode: 0755
-        checksum: sha256:cb49197eef7a19f12bd46c921a1e3a388f8f26e77307eb3f366d274003859201
-
     - name: Check gdev-env directory permissions
       file:
         path: "{{gdev_env_dir}}"
