@@ -40,7 +40,7 @@ HEREDOC
 
   PROXY_UNMODIFIED_TO_COMPOSE=%w{build kill logs ps pull restart rm start stop}
   PROXY_MODIFIED=%w{up run}
-  OTHER_COMMANDS=%w{reload cleanup machine update service status shell exec sync}
+  OTHER_COMMANDS=%w{wait reload cleanup machine update service status shell exec sync}
 
   def initialize(args)
     if PROXY_UNMODIFIED_TO_COMPOSE.include?(args[0])
@@ -119,10 +119,28 @@ HEREDOC
     system(args.join(" "))
 
     settings = get_container_settings()
+  end
 
-    if not settings['unison'].nil? and not settings['unison'].empty?
-      # sync data
-      puts "INFO: To sync file changes in realtime to data container $ gdev sync"
+  def wait(args)
+
+    if command_exists 'du'
+        web_container=`docker-compose ps -q web`.strip
+        if is_osx?
+            puts "INFO: Waiting for host <-> container filesystems to be synced..."
+            30.times do
+                container_data_amount = `docker exec -it #{web_container} du -sm . | cut -f1`.strip.to_f
+                host_data_amount = `du -I '.git' -sm . | cut -f1`.strip.to_f
+
+                puts "#{container_data_amount}Mb / #{host_data_amount}Mb"
+                if host_data_amount - container_data_amount < 5
+                    sleep 1
+                    puts "INFO: Container is synced..."
+                    return true
+                end
+                sleep 3
+            end
+            puts "ERROR: Sync process timeout..."
+        end
     end
   end
 
@@ -348,6 +366,10 @@ HEREDOC
       stderrout.close if stderrout
     end
     return output
+  end
+
+  def is_osx?
+    RUBY_PLATFORM.include? 'darwin'
   end
 
   # Cross-platform way of finding an executable in the $PATH.
