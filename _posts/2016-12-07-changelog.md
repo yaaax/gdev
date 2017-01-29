@@ -5,7 +5,7 @@ category: info
 date: 2016-12-07 15:51:23
 ---
 
-## v20161207.0
+## v20170129.0
 * Added progress notifications about filesystem sync when `devgeniem/bg-sync` image is used. Now developers can easily see if `bg-sync` is ready.
 
 ## v20161207.0
